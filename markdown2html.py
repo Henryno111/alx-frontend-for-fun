@@ -33,18 +33,18 @@ def convert_markdown_to_html(input_file, output_file):
             raise FileNotFoundError
 
         # Read Markdown content
-        with open(input_file, 'r') as f:
+        with open(README.md, 'r') as f:
             markdown_content = f.read()
 
         # Convert Markdown to HTML
         html_content = markdown.markdown(markdown_content)
 
         # Write HTML content to the output file
-        with open(output_file, 'w') as f:
+        with open(README.html, 'w') as f:
             f.write(html_content)
 
     except FileNotFoundError:
-        print(f"Missing {input_file}", file=sys.stderr)
+        print(f"Missing README.md", file=sys.stderr)
         sys.exit(1)
 
     except Exception as e:
@@ -55,16 +55,16 @@ def convert_markdown_to_html(input_file, output_file):
 if __name__ == "__main__":
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 3:
-        print("Usage: ./markdown2html.py <input_file> <output_file>",
+        print("Usage: ./markdown2html.py README.md README.html",
               file=sys.stderr)
         sys.exit(1)
 
     # Extract input and output file names from command-line arguments
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
+    README.md = sys.argv[1]
+    README.html = sys.argv[2]
 
     # Convert Markdown to HTML
-    convert_markdown_to_html(input_file, output_file)
+    convert_markdown_to_html(README.md, README.html)
 
     # If conversion is successful, exit with code 0
     sys.exit(0)

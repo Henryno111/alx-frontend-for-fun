@@ -1,0 +1,24 @@
+/* Base styles for mobile devices */
+body {
+  font-size: 32px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  /* Styles for tablets and larger screens */
+  body {
+    font-size: 20px;
+    background-image: './sprite.png';
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Styles for desktop screens */
+  body {
+    font-size: 10px;
+  }
+
+
+
+
+}
